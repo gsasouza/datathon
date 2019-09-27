@@ -1,0 +1,8 @@
+{
+  "name": "datathon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gsasouza/datathon.git",
+  "author": "Gabriel Souza <gabrie.ssouza@gmail.com>",
+  "license": "MIT"
+}
