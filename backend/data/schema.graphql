@@ -1,0 +1,145 @@
+input ChangePasswordInput {
+  oldPassword: String!
+
+  """user new password"""
+  password: String!
+  clientMutationId: String
+}
+
+type ChangePasswordPayload {
+  error: String
+  me: User
+  clientMutationId: String
+}
+
+input CreateProductInput {
+  name: String!
+  quantity: String!
+  createdby: ID!
+  price: String!
+  clientMutationId: String
+}
+
+type CreateProductPayload {
+  product: Product
+  error: String
+  clientMutationId: String
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  isOwner: Boolean!
+  password: String!
+  clientMutationId: String
+}
+
+type CreateUserPayload {
+  token: String
+  error: String
+  clientMutationId: String
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+  clientMutationId: String
+}
+
+type LoginUserPayload {
+  token: String
+  error: String
+  clientMutationId: String
+}
+
+type Mutation {
+  ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload
+  LoginUser(input: LoginUserInput!): LoginUserPayload
+  CreateUser(input: CreateUserInput!): CreateUserPayload
+  CreateProduct(input: CreateProductInput!): CreateProductPayload
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+"""Product data"""
+type Product {
+  """The ID of an object"""
+  id: ID!
+  _id: String
+  name: String
+  quantity: String
+  price: String
+  createdby: User
+  active: Boolean
+}
+
+"""A connection to a list of items."""
+type ProductConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [ProductEdge]
+  count: Int
+}
+
+"""An edge in a connection."""
+type ProductEdge {
+  """The item at the end of the edge"""
+  node: Product
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+"""The root of all queries"""
+type Query {
+  me: User
+  product(id: ID!): Product
+  products(after: String, first: Int, before: String, last: Int, search: String, isOwner: Boolean): ProductConnection
+  user(id: ID!): User
+  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection
+}
+
+"""User data"""
+type User {
+  """The ID of an object"""
+  id: ID!
+  _id: String
+  name: String
+  email: String
+  isOwner: Boolean
+  active: Boolean
+}
+
+"""A connection to a list of items."""
+type UserConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [UserEdge]
+  count: Int
+}
+
+"""An edge in a connection."""
+type UserEdge {
+  """The item at the end of the edge"""
+  node: User
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
