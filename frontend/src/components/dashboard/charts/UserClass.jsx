@@ -4,6 +4,8 @@ import {Box} from '@chakra-ui/core'
 import ReactApexChart from 'react-apexcharts'
 
 import ChartLabel from './ChartLabel';
+import {createFragmentContainer} from 'react-relay'
+import graphql from 'babel-plugin-relay/macro'
 
 const Wrapper = styled(Box)`
    margin: 10px;
@@ -74,7 +76,8 @@ const series =  [
   }
 ];
 
-const UserClass = () => {
+const UserClass = ({ analytics }) => {
+  console.log(analytics);
   return (
     <Row>
       <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
@@ -87,4 +90,14 @@ const UserClass = () => {
   )
 }
 
-export default UserClass
+export default createFragmentContainer(UserClass, {
+  analytics: graphql`
+    fragment UserClass_analytics on Analytics {
+      expensesByFlightType {
+        year
+        expenses
+      }
+    }
+  `,
+});
+

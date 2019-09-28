@@ -7,7 +7,6 @@ import graphqlHttp from 'koa-graphql';
 import Router from 'koa-router';
 import { koaPlayground } from 'graphql-playground-middleware';
 
-import { getUser } from './auth';
 
 import schema from './schema';
 import registerLoaders from './registerLoaders';
@@ -23,7 +22,7 @@ router.all(
 );
 
 const graphqlSettingsPerReq = async req => {
-  const { user } = await getUser(req.header.authorization);
+  // const { user } = await getUser(req.header.authorization);
 
   const dataloaders = registerLoaders();
 
@@ -33,7 +32,6 @@ const graphqlSettingsPerReq = async req => {
     context: {
       req,
       dataloaders,
-      user
     },
     formatError: error => {
       console.log(error.message);

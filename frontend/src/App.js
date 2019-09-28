@@ -6,6 +6,10 @@ import Content from './components/common/Content'
 import Dashboard from './components/dashboard/Dashboard';
 
 const GlobalStyle = createGlobalStyle`
+  body {
+    padding: 0;
+    margin: 0;
+  }
   * {
     font-family: Nunito Sans, sans-serif;
   }

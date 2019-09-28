@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import {
   Box,
 } from "@chakra-ui/core";
+import { createFragmentContainer } from 'react-relay';
+import graphql from 'babel-plugin-relay/macro';
 
 import ChartLabel from './ChartLabel';
 
@@ -89,32 +91,34 @@ const options = {
   }
 }
 
-const data = [
-  {
-    name: "2019",
-    data: [28, 29, 33, 36, 32, 32, 33, 28, 29, 33, 36, 32]
-  },
-  {
-    name: "2018",
-    data: [32, 33, 28, 29, 33, 36, 32, 28, 29, 33, 36, 32, ]
-  },
-  {
-    name: "2017",
-    data: [29, 33, 36, 32, 28, 29, 32, 33, 28, 33, 36, 32, ]
-  },
-];
-
-
-
-const ExpensesByTime = () => {
+const ExpensesByTime = ({ analytics }) => {
+  const series = analytics.yearlyExpenses.map(({
+    year,
+    expenses
+  }) => ({
+    name: year.toString(),
+    data: expenses.map(expense => expense.value)
+  }))
   return (
     <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
       <ChartLabel>
         Histórico de despesas
       </ChartLabel>
-      <ApexCharts series={data} options={options}/>
+      <ApexCharts series={series} options={options}/>
     </Wrapper>
   )
 }
 
-export default ExpensesByTime;
+export default  createFragmentContainer(ExpensesByTime, {
+  analytics: graphql`
+    fragment ExpensesByTime_analytics on Analytics {
+      yearlyExpenses {
+        year
+        expenses {
+          value
+          month
+        }
+      }
+    }
+  `,
+});

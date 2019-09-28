@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 import ChartLabel from './ChartLabel';
+import {createFragmentContainer} from 'react-relay'
+import graphql from 'babel-plugin-relay/macro'
 
 const Wrapper = styled(Box)`
   margin: 10px;
@@ -29,7 +31,7 @@ const RelativeValue = styled.span`
   }
 `;
 
-const ExpensesLastMonth = () => {
+const ExpensesLastMonth = ({ analytics }) => {
 
   const value = 10
   return (
@@ -38,16 +40,25 @@ const ExpensesLastMonth = () => {
         Depesas no último mês
       </ChartLabel>
       <Label>
-        R$ 120K
+        R$ {analytics.lastMonthExpenses.value}K
       </Label>
       <Tooltip label={'Diferença em relação ao mês anterior'}>
-        <RelativeValue value={value}>
-          10%
-          <FontAwesomeIcon icon={value > 0 ? faArrowUp : faArrowDown }/>
+        <RelativeValue value={analytics.lastMonthExpenses.relativeDiff}>
+          {analytics.lastMonthExpenses.relativeDiff}%
+          <FontAwesomeIcon icon={analytics.lastMonthExpenses.relativeDiff > 0 ? faArrowUp : faArrowDown }/>
         </RelativeValue>
       </Tooltip>
     </Wrapper>
   )
 }
 
-export default ExpensesLastMonth;
+export default createFragmentContainer(ExpensesLastMonth, {
+  analytics: graphql`
+    fragment ExpensesLastMonth_analytics on Analytics {
+      lastMonthExpenses {
+        value
+        relativeDiff
+      }
+    }
+  `,
+});

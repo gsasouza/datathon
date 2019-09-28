@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import {Box} from '@chakra-ui/core'
 
 import ChartLabel from './ChartLabel';
+import {createFragmentContainer} from 'react-relay'
+import graphql from 'babel-plugin-relay/macro'
 
 const options =  {
   plotOptions: {
@@ -28,7 +30,7 @@ const Wrapper = styled(Box)`
    border: 1px solid #6928852b;
 `;
 
-const ExpensesUntilToday = () => {
+const ExpensesUntilToday = ({ analytics }) => {
   return (
     <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
       <ChartLabel>
@@ -36,7 +38,7 @@ const ExpensesUntilToday = () => {
       </ChartLabel>
       <ReactApexChart
         options={options}
-        series={[70]}
+        series={[analytics.totalExpenses]}
         type="radialBar"
         height="350"
       />
@@ -44,4 +46,10 @@ const ExpensesUntilToday = () => {
   )
 }
 
-export default ExpensesUntilToday;
+export default createFragmentContainer(ExpensesUntilToday, {
+  analytics: graphql`
+    fragment ExpensesUntilToday_analytics on Analytics {
+      totalExpenses
+    }
+  `,
+});

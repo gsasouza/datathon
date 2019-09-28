@@ -1,12 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { createFragmentContainer } from 'react-relay';
+import graphql from 'babel-plugin-relay/macro';
 
 import ExpensesByTime from './charts/ExpensesByTime';
 import UserClass from './charts/UserClass';
 import InsightCard from './charts/InsigthCard';
 import ExpensesUntilToday from './charts/ExpensesUntilToday';
 import ExpensesLastMonth from './charts/ExpensesLastMonth';
-
+import { createQueryRenderer } from '../../relay/createQueryRenderer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,20 +27,21 @@ const Column = styled.div`
 
 const Row = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 
-const OverView = () => {
+const OverView = ({ query: { analytics } }) => {
   return (
     <Column width={'100%'}>
       <Row>
-        <ExpensesUntilToday/>
-        <ExpensesLastMonth/>
+        <ExpensesUntilToday analytics={analytics}/>
+        <ExpensesLastMonth analytics={analytics}/>
       </Row>
       <Wrapper>
       <Column>
-        <ExpensesByTime />
-        <UserClass/>
+        <ExpensesByTime analytics={analytics} />
+        <UserClass analytics={analytics}/>
       </Column>
       <InsightsWrapper>
         <InsightCard>
@@ -50,4 +53,23 @@ const OverView = () => {
   )
 }
 
-export default OverView;
+const FragmentContainer = createFragmentContainer(OverView, {
+  query: graphql`
+    fragment OverView_query on Query {
+      analytics {
+        ...ExpensesByTime_analytics
+        ...ExpensesLastMonth_analytics
+        ...ExpensesUntilToday_analytics
+        ...UserClass_analytics
+      }      
+    }
+  `,
+});
+
+export default createQueryRenderer(FragmentContainer, {
+  query: graphql`
+    query OverViewQuery {
+      ...OverView_query
+    }
+  `,
+});
