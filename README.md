@@ -42,5 +42,8 @@ In a bash:
     `yarn`
 
 #### Start application
-    `yarn start`
+    `yarn dev`
+
+### DATA ANALYSES
+
 
