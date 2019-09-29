@@ -21,7 +21,7 @@ const Dashboard = () => {
   return (
     <Wrapper>
       <Heading>
-        Cake
+        Cake Board
       </Heading>
       <Content>
         <TabContent/>
