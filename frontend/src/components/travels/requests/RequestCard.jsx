@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
-import  { ExpensesByTime } from '../dashboard/charts/ExpensesByTime'
-import ChartLabel from '../dashboard/charts/ChartLabel'
+import  { ExpensesByTime } from '../../dashboard/charts/ExpensesByTime'
+import ChartLabel from '../../dashboard/charts/ChartLabel'
 
 const Row = styled.div`
   display: flex;

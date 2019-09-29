@@ -1,4 +1,4 @@
-# CAKE
+# CAKE BOARD
 
 - SmartBoard <br>
   Shows the information. Easily.

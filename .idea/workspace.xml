@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a6c5436-6448-48f8-a2bd-a0a6256f4b05" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="4a6c5436-6448-48f8-a2bd-a0a6256f4b05" name="Default Changelist" comment="fix(readme): fix backend start">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/travels/data/travels.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressCard.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/travels/requests/RequestList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/requests/RequestCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/travels/requests/RequestCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/requests/RequestList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressList.jsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,10 +24,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/requests/RequestList.jsx">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/requests/RequestList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="385">
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -28,80 +36,85 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/requests/RequestCard.jsx">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/data/travels.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="608">
+              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/regression.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/scripts/updateSchema.js">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+            <state relative-caret-position="-304">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="474">
-                <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressCard.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/charts/ExpensesByTime.jsx">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2242">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+            <state relative-caret-position="494">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding>
-                <element signature="e#0#30#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedCard.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/Dashboard.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/OverView.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1786">
+              <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -120,12 +133,16 @@
       <find>filter</find>
       <find>format</find>
       <find>st</find>
+      <find>Request</find>
+      <find>InProgress</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>Header</replace>
       <replace>Requests</replace>
       <replace>Analytics</replace>
+      <replace>InProgress</replace>
+      <replace>Finished</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\gabri\OneDrive\Documentos\usp\datathon</dir>
@@ -137,15 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/webpack.config.js" />
-        <option value="$PROJECT_DIR$/node_modules/@jetbrains/ring-ui/babel.config.js" />
-        <option value="$PROJECT_DIR$/src/components/common/Content.jsx" />
-        <option value="$PROJECT_DIR$/src/components/common/Header.jsx" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/utils/theme.js" />
-        <option value="$PROJECT_DIR$/src/utils/theme.js" />
-        <option value="$PROJECT_DIR$/src/components/dashboard/Card.jsx" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/dashboard/Requests.jsx" />
         <option value="$PROJECT_DIR$/src/components/dashboard/tabs.js" />
         <option value="$PROJECT_DIR$/src/components/dashboard/charts/YearFilter.jsx" />
@@ -179,7 +187,6 @@
         <option value="$PROJECT_DIR$/frontend/src/components/dashboard/charts/GaugeChart.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/components/dashboard/charts/UserClass.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/components/dashboard/charts/ExpenseEconomyBar.jsx" />
-        <option value="$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/dashboard/charts/InsigthCard.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/components/dashboard/TabContent.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/components/dashboard/charts/ExpensesByTime.jsx" />
@@ -187,7 +194,17 @@
         <option value="$PROJECT_DIR$/frontend/src/components/requests/RequestCard.jsx" />
         <option value="$PROJECT_DIR$/frontend/src/components/requests/RequestList.jsx" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/frontend/src/components/dashboard/Dashboard.jsx" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/requests/RequestCard.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgessCard.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/data/travels.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedList.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/requests/RequestList.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressList.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedCard.jsx" />
+        <option value="$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressCard.jsx" />
       </list>
     </option>
   </component>
@@ -220,6 +237,71 @@
               <item name="datathon" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="travels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="travels" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="travels" type="462c0819:PsiDirectoryNode" />
+              <item name="finished" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="travels" type="462c0819:PsiDirectoryNode" />
+              <item name="inProgress" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="datathon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datathon" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="travels" type="462c0819:PsiDirectoryNode" />
+              <item name="requests" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -236,12 +318,13 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon\frontend\data" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon\frontend\src\components\travels" />
+      <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon\src" />
       <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon\frontend\data" />
       <recent name="C:\Users\gabri\OneDrive\Documentos\usp\datathon" />
     </key>
   </component>
@@ -269,13 +352,21 @@
       <updated>1569649609735</updated>
       <workItem from="1569649611016" duration="55411000" />
     </task>
+    <task id="LOCAL-00001" summary="fix(readme): fix backend start">
+      <created>1569764959215</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569764959215</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56856000" />
+    <option name="totallyTimeSpent" value="58612000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-1928" y="0" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -321,14 +412,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix(readme): fix backend start" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(readme): fix backend start" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/Requests.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/charts/YearFilter.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/charts/InsigthCard.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/charts/UserClass.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/charts/ExpensesByTime.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/charts/ChartLabel.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/dashboard/Card.jsx" />
     <entry file="file://$PROJECT_DIR$/src/components/dashboard/Dashboard.jsx" />
     <entry file="file://$PROJECT_DIR$/src/components/dashboard/charts/ExpensesUntilToday.jsx" />
     <entry file="file://$PROJECT_DIR$/src/components/dashboard/TabContent.jsx" />
@@ -442,15 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/Dashboard.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-715">
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -543,13 +622,6 @@
     <entry file="file://$PROJECT_DIR$/classeUsuario.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="9" column="60" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/charts/ExpensesUntilToday.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -600,9 +672,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="12" selection-start-column="12" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/scripts/updateSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/requests/RequestCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="7" column="39" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/Dashboard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/OverView.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
+        <state relative-caret-position="1786">
           <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -610,30 +716,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/requests/RequestCard.jsx">
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/data/travels.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="608">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/requests/RequestList.jsx">
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/requests/RequestList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="385">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="474">
-            <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/dashboard/tabs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="8" column="37" lean-forward="true" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/node_modules/@chakra-ui/core/dist/es/Accordion/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-304">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/finished/FinishedCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/travels/inProgress/InProgressCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
