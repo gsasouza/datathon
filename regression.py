@@ -4,6 +4,7 @@ from sklearn.cluster import KMeans
 from sklearn import preprocessing
 from sklearn.utils import shuffle
 import numpy as np
+import random
 
 np.set_printoptions(threshold=np.inf)
 
@@ -20,8 +21,6 @@ def computeerror(realVals, predictedVals):
 '''
 
 def trainModels():
-
-
     flights = r"dataset_argo\dataset\flights.csv"
     users = r"dataset_argo\dataset\users.csv"
     hotels = r"dataset_argo\dataset\hotels.csv"
@@ -132,17 +131,29 @@ def trainModels():
 
     hotel_predicted_labels = model_hotel_cost.predict(test_set)
     flight_predicted_labels = model_flight_cost.predict(test_set)
-    
+
     print(test_set)
 
+    print(computeerror( test_labels_hotel,  hotel_predicted_labels).mean())
+    print(computeerror( test_labels_flight, flight_predicted_labels).mean())
 
-print(computeerror( test_labels_hotel,  hotel_predicted_labels).mean())
-print(computeerror( test_labels_flight, flight_predicted_labels).mean())
 
-#"Real" set example
+    return (model_flight_cost, model_hotel_cost)
 
-production_fake_set     = [[20, 172, 112, 114, 1, 0, 0, 0, 0]]
-production_fake_set.append([20,   5,  35,  12, 0, 1, 0, 0, 0])
-production_fake_set.append([20, 172, 112, 114, 0, 0, 1, 0, 0])
-production_fake_set.append([20, 172, 112, 114, 0, 0, 0, 1, 0])
-production_fake_set.append([20, 172, 112, 114, 0, 0, 0, 0, 1])
+
+def predict(model_flight, model_hotel):
+    #"Real" set example
+
+    production_fake_set     = [[20, 172, 112, 114, 1, 0, 0, 0, 0]]
+    production_fake_set.append([20,   5,  35,  12, 0, 1, 0, 0, 0])
+    production_fake_set.append([20, 172, 112, 114, 0, 0, 1, 0, 0])
+    production_fake_set.append([20, 172, 112, 114, 0, 0, 0, 1, 0])
+    production_fake_set.append([20, 172, 112, 114, 0, 0, 0, 0, 1])
+
+    selected_user = random.randint(1, 5)
+
+    userlist = [production_fake_set[selected_user]]
+
+    return (model_flight.predict(userlist)[0],
+            model_hotel.predict(userlist)[0]
+            )

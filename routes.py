@@ -2,6 +2,9 @@ from flask import Flask
 import utils
 import json
 
+import regression
+import userclass
+
 app = Flask(__name__)
 
 
@@ -20,14 +23,19 @@ def getexpenses():
                                      utils.hotels,
                                      utils.nameC))
 
-'''
 @app.route("/api/models/cost")
 def guesscost():
-#call trained model
+    models = regression.trainModels()
+    predVals = regression.predict(models[0], models[1])
+    return json.dumps(predVals)
 
 
-# call trained model
-'''
+@app.route("/api/models/classify")
+def classify():
+    labels = userclass.trainModels()
+    returntype = {'classification' : str(userclass.classifyUser(labels))}
+    return json.dumps(returntype)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
