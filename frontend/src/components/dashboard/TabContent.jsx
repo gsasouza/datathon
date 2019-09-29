@@ -28,15 +28,14 @@ const TabContent = () => {
     <StyledTabs variant="enclosed" w="100%">
       <TabList>
         {tabs.map(tab => (
-        <StyledTab key={tab.label}>
-          {tab.label}
-        </StyledTab>
-      ))}
+          <StyledTab key={tab.label}>
+            {tab.label}
+          </StyledTab>
+        ))}
       </TabList>
       <StyledTabPanels>
         {tabs.map(({ label, component: Component }) => (
           <TabPanel key={label}>
-            {console.log(Component)}
             <React.Suspense fallback={<Loading />}>
               <Component />
             </React.Suspense>

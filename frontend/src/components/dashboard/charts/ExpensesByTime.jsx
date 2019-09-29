@@ -111,7 +111,7 @@ const options = {
   }
 }
 
-const ExpensesByTime = ({ analytics }) => {
+export const ExpensesByTime = ({ analytics, ...props }) => {
   const series = analytics.yearlyExpenses.map(({
     year,
     expenses
@@ -124,7 +124,7 @@ const ExpensesByTime = ({ analytics }) => {
       <ChartLabel>
         Histórico de despesas
       </ChartLabel>
-      <ApexCharts series={series} options={options}/>
+      <ApexCharts series={series} options={options} {...props}/>
     </Wrapper>
   )
 }

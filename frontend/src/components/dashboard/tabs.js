@@ -7,6 +7,6 @@ export default [
   },
   {
     label: 'Solicitações',
-    component: React.lazy(() => import('./Requests'))
+    component: React.lazy(() => import('../requests/RequestList'))
   }
 ]

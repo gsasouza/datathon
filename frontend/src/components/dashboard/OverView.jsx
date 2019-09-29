@@ -45,13 +45,11 @@ const OverView = ({ query: { analytics } }) => {
       </Row>
       <Wrapper>
       <Column>
-        <ExpensesByTime analytics={analytics} />
+        <ExpensesByTime analytics={analytics} height={400}/>
         <UserClass analytics={analytics}/>
       </Column>
       <InsightsWrapper>
-        <InsightCard>
-          NUMBERS
-        </InsightCard>
+        <InsightCard />
       </InsightsWrapper>
       </Wrapper>
     </Column>

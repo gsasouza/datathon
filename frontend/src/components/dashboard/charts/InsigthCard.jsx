@@ -62,8 +62,8 @@ const InsightCard  = ({ children }) => {
   return (
     <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
       <ChartLabel style={{ marginBottom: 15 }}> Funcionários com as maiores despesas </ChartLabel>
-      {users.map(user => (
-        <CardItem>
+      {users.map((user, index) => (
+        <CardItem key={index}>
           {user.label}
         </CardItem>
       ))}
