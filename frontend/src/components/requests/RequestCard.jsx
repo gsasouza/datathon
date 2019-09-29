@@ -1,9 +1,12 @@
 import * as React from 'react';
-import {AccordionHeader, AccordionItem, AccordionPanel, Box, Button} from '@chakra-ui/core'
-import format from "date-fns/format"
-import styled, {css} from 'styled-components'
+import {AccordionHeader, AccordionItem, AccordionPanel, Box, Button} from '@chakra-ui/core';
+import format from 'date-fns/format';
+import styled, {css} from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 import  { ExpensesByTime } from '../dashboard/charts/ExpensesByTime'
+import ChartLabel from '../dashboard/charts/ChartLabel'
 
 const Row = styled.div`
   display: flex;
@@ -16,8 +19,7 @@ const CardWrapper = styled(AccordionHeader)`
 
 const ApprovalSection = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-left: auto;
+  flex-direction: column; 
   button {
     background: transparent;
     margin: 5px;
@@ -32,10 +34,30 @@ const LabelWrapper = styled(Row)`
   ${props => !props.isOpen && css`max-width: 700px`};
 `;
 
+const SuggestionCard = styled(Box)`
+  margin: 10px;
+  border: 1px solid #6928852b;
+  background-color: #72c6a2;
+  color: #fff;
+`;
+
+const SuggestionCardContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    font-size: 18px;
+  }
+  button {
+    background-color: #fff;
+    color: #72c6a2;
+  }
+`;
+
 const Label = styled.fieldset`
   font-size: 18px;
   margin: 0 10px 5px 10px;
-  padding: 12px 20px 0 20px;
+  padding: 12px 20px 15px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -47,16 +69,26 @@ const Label = styled.fieldset`
     font-weight: bold;
     font-size: 14px;
   }
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: ${props => props.rating <= 5 ? '#ee2e24' : '#72c6a2'};
+
+    > svg {
+      font-size: 4rem;
+    }
+  }
 `;
 
 const Column = styled(Row)`
   width: 100%;
   flex-direction: column;
-
 `
 
-
-const RequestCard = ({ from, to, isAccordionOpen, handleAccordion, employee, date, price }) => {
+const RequestCard = ({ from, to, rating, isAccordionOpen, handleAccordion, employee, date, price, estimatedPrice }) => {
 
   const data = {
     yearlyExpenses: [{
@@ -98,12 +130,24 @@ const RequestCard = ({ from, to, isAccordionOpen, handleAccordion, employee, dat
               <legend>Data</legend>
               {format(date, 'dd/MM/uuuu')}
             </Label>
-            <Label>
-              <legend>Preço</legend>
+            <Label rating={rating}>
+              <legend>Despesa fixa</legend>
               R$ {price}
+            </Label>
+            <Label rating={rating}>
+              <legend> Despesa estimada</legend>
+              R$ {estimatedPrice}
             </Label>
 
           </LabelWrapper>
+          <Label rating={rating} style={{ marginLeft: 'auto', height: '90px', minWidth: '220px' }}>
+            <legend>Avaliação da solicitação</legend>
+            <span style={{ width: '100%'}}>
+                {rating * 10}%
+              <FontAwesomeIcon size={'lg'} icon={rating > 5 ? faThumbsUp : faThumbsDown}/>
+              </span>
+          </Label>
+
           <ApprovalSection>
             <Button rightIcon={'check'} variant="outline" size="sm">
               Aprovar
@@ -111,7 +155,7 @@ const RequestCard = ({ from, to, isAccordionOpen, handleAccordion, employee, dat
             <Button rightIcon={'close'} variant="outline" size="sm">
               Recusar
             </Button>
-            <Button onClick={handleAccordion} rightIcon={'view'} variant="outline" size="sm">
+            <Button onClick={handleAccordion} rightIcon={isAccordionOpen ? 'view-off' : 'view'} variant="outline" size="sm">
               {isAccordionOpen ? 'Fechar Detalhes' : 'Mostar Detalhes'}
             </Button>
           </ApprovalSection>
@@ -119,6 +163,19 @@ const RequestCard = ({ from, to, isAccordionOpen, handleAccordion, employee, dat
         <AccordionPanel isOpen={isAccordionOpen} defaultIsOpen={false}>
           <Column>
             <ExpensesByTime height={300} analytics={data}/>
+            <SuggestionCard  p={4} as={Box} shadow="sm" borderWidth="1px" rounded="lg">
+              <ChartLabel>
+                Sugestão
+              </ChartLabel>
+              <SuggestionCardContent>
+                <span>
+                  Está viagem terá menor custo em <strong> 30/09/2019 </strong>
+                </span>
+                <Button rightIcon={'repeat'} variant="outline" size="sm">
+                  Alterar data
+                </Button>
+              </SuggestionCardContent>
+            </SuggestionCard>
           </Column>
         </AccordionPanel>
       </CardWrapper>
