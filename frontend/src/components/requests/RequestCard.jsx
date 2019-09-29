@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {AccordionHeader, AccordionItem, AccordionPanel, Box, Button} from '@chakra-ui/core';
 import format from 'date-fns/format';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -31,7 +31,6 @@ const LabelWrapper = styled(Row)`
   flex-wrap: wrap;
   align-items: flex-start;
   max-width: 100%;
-  ${props => !props.isOpen && css`max-width: 700px`};
 `;
 
 const SuggestionCard = styled(Box)`
@@ -122,14 +121,12 @@ const RequestCard = ({ from, to, rating, isAccordionOpen, handleAccordion, emplo
               <legend>Destino</legend>
               {to}
             </Label>
-            <Label>
-              <legend>Funcionário</legend>
-              {employee}
-            </Label>
+
             <Label>
               <legend>Data</legend>
               {format(date, 'dd/MM/uuuu')}
             </Label>
+
             <Label rating={rating}>
               <legend>Despesa fixa</legend>
               R$ {price}
@@ -137,6 +134,10 @@ const RequestCard = ({ from, to, rating, isAccordionOpen, handleAccordion, emplo
             <Label rating={rating}>
               <legend> Despesa estimada</legend>
               R$ {estimatedPrice}
+            </Label>
+            <Label>
+              <legend>Funcionário</legend>
+              {employee}
             </Label>
 
           </LabelWrapper>
@@ -162,14 +163,14 @@ const RequestCard = ({ from, to, rating, isAccordionOpen, handleAccordion, emplo
         </Row>
         <AccordionPanel isOpen={isAccordionOpen} defaultIsOpen={false}>
           <Column>
-            <ExpensesByTime height={300} analytics={data}/>
+            <ExpensesByTime label={'Histórico de despesas do funcionário'} height={300} analytics={data}/>
             <SuggestionCard  p={4} as={Box} shadow="sm" borderWidth="1px" rounded="lg">
               <ChartLabel>
-                Sugestão
+                Sugestões
               </ChartLabel>
               <SuggestionCardContent>
                 <span>
-                  Está viagem terá menor custo em <strong> 30/09/2019 </strong>
+                  Provável economia se a data da viagem for alterada para <strong> 30/09/2019 </strong>
                 </span>
                 <Button rightIcon={'repeat'} variant="outline" size="sm">
                   Alterar data

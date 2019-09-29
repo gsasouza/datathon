@@ -92,7 +92,6 @@ const options = {
   grid: {
     borderColor: '#e7e7e7',
     row: {
-      // colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
       opacity: 0.5
     },
   },
@@ -111,7 +110,7 @@ const options = {
   }
 }
 
-export const ExpensesByTime = ({ analytics, ...props }) => {
+export const ExpensesByTime = ({ analytics, label = 'Histórico de despesas', ...props }) => {
   const series = analytics.yearlyExpenses.map(({
     year,
     expenses
@@ -122,7 +121,7 @@ export const ExpensesByTime = ({ analytics, ...props }) => {
   return (
     <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
       <ChartLabel>
-        Histórico de despesas
+        {label}
       </ChartLabel>
       <ApexCharts series={series} options={options} {...props}/>
     </Wrapper>
