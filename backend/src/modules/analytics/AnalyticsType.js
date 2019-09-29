@@ -1,5 +1,6 @@
-import {GraphQLInputObjectType, GraphQLObjectType, GraphQLString, GraphQLList, GraphQLFloat, GraphQLInt} from 'graphql';
+import { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLFloat, GraphQLInt} from 'graphql';
 import { globalIdField } from 'graphql-relay';
+import { getExpensesInYear } from './AnalyticsLoader'
 
 const LastMonthExpensesObjectType = new GraphQLObjectType({
   name: 'LastMonthExpenses',
@@ -70,7 +71,7 @@ export default new GraphQLObjectType({
     },
     totalExpenses: {
       type: GraphQLFloat,
-      resolve: Analytics => 350,
+      resolve: Analytics => getExpensesInYear(),
     },
     lastMonthExpenses: {
       type: LastMonthExpensesObjectType,
