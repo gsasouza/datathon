@@ -12,11 +12,12 @@ This solution is intended to be easy, as a piece of CAKE.
 
 - [Node.JS @LTS](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
+- [Python 3.7]
 
 ## How to run
 
 ### FRONTEND
-In a bash:
+In terminal:
 
 #### Go to frontend directory
     `cd frontend`
@@ -33,7 +34,7 @@ In a bash:
 
 ### BACKEND
 
-In a bash:
+In terminal:
 
 #### Go to frontend directory
     `cd frontend`
@@ -44,6 +45,16 @@ In a bash:
 #### Start application
     `yarn dev`
 
-### DATA ANALYSES
+### DATA ANALYSIS API
 
+In terminal:
 
+#### Go to API directory
+    `cd dataAPI`
+
+#### Install requirements
+    `pip install -r requirements.txt`
+
+#### Start application
+    `python routes.py`
+    
