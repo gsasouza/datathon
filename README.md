@@ -12,7 +12,7 @@ This solution is intended to be easy, as a piece of CAKE.
 
 - [Node.JS @LTS](https://nodejs.org/en/)
 - [Yarn](https://yarnpkg.com/lang/en/)
-- [Python 3.7]
+- [Python 3.7](https://www.python.org/)
 
 ## How to run
 
