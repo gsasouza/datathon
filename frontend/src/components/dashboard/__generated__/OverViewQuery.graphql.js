@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash a5bbdc5605aba025c0267c4e19adb0ad
+ * @relayHash da97329e5915261535c782cf2a5b7516
  */
 
 /* eslint-disable */
@@ -174,7 +174,7 @@ return {
             "storageKey": null,
             "args": null,
             "concreteType": "ExpensesByFlight",
-            "plural": false,
+            "plural": true,
             "selections": [
               (v0/*: any*/),
               {

@@ -18,24 +18,25 @@ const Wrapper = styled(Box)`
 `;
 
 const Label = styled.span`
-  font-size: 60px;
+  font-size: 54px;
+  margin-left: 50px;
+  margin-right: 25px;
 `;
 
 const RelativeValue = styled.span`
   align-self: flex-end;
   margin: 0 30px auto 30px;
-  color: ${props => props.value <= 0 ? `#72c6a2` : 'red'};
+  color: ${props => props.value <= 0 ? `#72c6a2` : '#ee2e24'};
   font-size: 25px;
   > svg {
-    margin 0 5px;
+    margin: 0 5px;
   }
 `;
 
 const ExpensesLastMonth = ({ analytics }) => {
 
-  const value = 10
   return (
-    <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg" w={300}>
+    <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
       <ChartLabel style={{ marginBottom: 'auto'}}>
         Depesas no último mês
       </ChartLabel>

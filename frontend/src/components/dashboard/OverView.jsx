@@ -8,6 +8,8 @@ import UserClass from './charts/UserClass';
 import InsightCard from './charts/InsigthCard';
 import ExpensesUntilToday from './charts/ExpensesUntilToday';
 import ExpensesLastMonth from './charts/ExpensesLastMonth';
+import GaugeChart from './charts/GaugeChart';
+import ExpenseEconomyBar from './charts/ExpenseEconomyBar';
 import { createQueryRenderer } from '../../relay/createQueryRenderer';
 
 const Wrapper = styled.div`
@@ -27,7 +29,8 @@ const Column = styled.div`
 
 const Row = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 
@@ -37,6 +40,8 @@ const OverView = ({ query: { analytics } }) => {
       <Row>
         <ExpensesUntilToday analytics={analytics}/>
         <ExpensesLastMonth analytics={analytics}/>
+        <GaugeChart />
+        <ExpenseEconomyBar />
       </Row>
       <Wrapper>
       <Column>

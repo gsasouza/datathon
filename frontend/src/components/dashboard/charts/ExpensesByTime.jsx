@@ -15,18 +15,18 @@ const Wrapper = styled(Box)`
 `;
 
 const months = [
-  'Janeiro',
-  'Fevereiro',
-  'Março',
-  'Abril',
-  'Maio',
-  'Junho',
-  'Julho',
-  'Agosto',
-  'Setembro',
-  'Outubro',
-  'Novembro',
-  'Dezembro'
+  'Jan',
+  'Fev',
+  'Mar',
+  'Abr',
+  'Mai',
+  'Jun',
+  'Jul',
+  'Ago',
+  'Set',
+  'Out',
+  'Nov',
+  'Dez'
 ]
 
 
@@ -34,6 +34,14 @@ const months = [
 const yaxis = {
   title: {
     text: 'Despesas',
+    style: {
+      fontSize: 16
+    }
+  },
+  labels: {
+    style: {
+      fontSize: 16,
+    }
   }
 }
 
@@ -41,11 +49,19 @@ const xaxis = {
   categories: months,
   title: {
     text: 'Mês',
-    fontSize: 16
-  }
+    style: {
+      fontSize: 16
+    }
+  },
+  labels: {
+    style: {
+      fontSize: 16,
+    }
+  },
 }
 
 const options = {
+  colors: ['#72c6a2', '#692885', '#ee2e24'],
   chart: {
     shadow: {
       enabled: true,
@@ -61,6 +77,9 @@ const options = {
   },
   dataLabels: {
     enabled: true,
+    style: {
+      fontSize: 16
+    }
   },
   stroke: {
     curve: 'smooth'
@@ -87,7 +106,8 @@ const options = {
     horizontalAlign: 'right',
     floating: true,
     offsetY: -25,
-    offsetX: -5
+    offsetX: -5,
+    fontSize: 16,
   }
 }
 

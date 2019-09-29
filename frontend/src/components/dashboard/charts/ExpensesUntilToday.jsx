@@ -7,23 +7,7 @@ import ChartLabel from './ChartLabel';
 import {createFragmentContainer} from 'react-relay'
 import graphql from 'babel-plugin-relay/macro'
 
-const options =  {
-  plotOptions: {
-    radialBar: {
-      hollow: {
-        size: '60%',
-      },
-      dataLabels:{
-        value: {
-          fontSize: '40px',
-          formatter: v => `R$ ${v}K`,
-          offsetY: -3,
-        },
-      }
-    },
-  },
-  labels: ['']
-}
+
 
 const Wrapper = styled(Box)`
    margin: 10px;
@@ -31,14 +15,40 @@ const Wrapper = styled(Box)`
 `;
 
 const ExpensesUntilToday = ({ analytics }) => {
+
+  const options =  {
+    stroke: {
+      lineCap: 'round'
+    },
+    fill: {
+      colors: ['#692885']
+    },
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          size: '60%',
+        },
+        dataLabels:{
+          value: {
+            fontSize: '40px',
+            formatter: () => `R$ ${analytics.totalExpenses}K`,
+            offsetY: -3,
+          },
+        }
+      },
+    },
+    labels: ['']
+  }
+
   return (
     <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
       <ChartLabel>
         Despesas totais até agora
       </ChartLabel>
       <ReactApexChart
+        colors={['#692885']}
         options={options}
-        series={[analytics.totalExpenses]}
+        series={[75]}
         type="radialBar"
         height="350"
       />

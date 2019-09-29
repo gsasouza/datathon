@@ -12,10 +12,10 @@ import type { FragmentReference } from "relay-runtime";
 declare export opaque type UserClass_analytics$ref: FragmentReference;
 declare export opaque type UserClass_analytics$fragmentType: UserClass_analytics$ref;
 export type UserClass_analytics = {|
-  +expensesByFlightType: ?{|
+  +expensesByFlightType: ?$ReadOnlyArray<?{|
     +year: ?number,
     +expenses: ?$ReadOnlyArray<?number>,
-  |},
+  |}>,
   +$refType: UserClass_analytics$ref,
 |};
 export type UserClass_analytics$data = UserClass_analytics;
@@ -40,7 +40,7 @@ const node/*: ReaderFragment*/ = {
       "storageKey": null,
       "args": null,
       "concreteType": "ExpensesByFlight",
-      "plural": false,
+      "plural": true,
       "selections": [
         {
           "kind": "ScalarField",

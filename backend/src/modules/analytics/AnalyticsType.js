@@ -82,7 +82,7 @@ export default new GraphQLObjectType({
     },
     expensesByFlightType: {
       type: new GraphQLList(ExpensesByFlightTypeObjectType),
-      resolve: () => new Array(3).fill({}),
+      resolve: () => new Array(3).fill({ year: 2019, expenses: []}),
     }
   }),
 });

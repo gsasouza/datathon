@@ -6,7 +6,7 @@ type Analytics {
   totalExpenses: Float
   lastMonthExpenses: LastMonthExpenses
   yearlyExpenses: [YearlyExpenses]
-  expensesByFlightType: ExpensesByFlight
+  expensesByFlightType: [ExpensesByFlight]
 }
 
 input ChangePasswordInput {

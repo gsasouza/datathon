@@ -18,66 +18,100 @@ const Row = styled.div`
   justify-content: space-around;
 `
 
-const options = {
-  chart: {
-    stacked: true,
-    toolbar: {
-      show: false
-    }
-  },
-  plotOptions: {
-    bar: {
-      horizontal: true,
-    },
-  },
-  stroke: {
-    width: 1,
-    colors: ['#fff']
-  },
-  xaxis: {
-    categories: [2019, 2018, 2017],
-    title: {
-      text: 'Ano'
-    },
-    labels: {
-      formatter: value => `${value}K`
-    }
-  },
-  yaxis: {
-    title: {
-      text: undefined
-    },
-  },
-  tooltip: {
-    y: {
-      formatter: value => `${value}K`
-    }
-  },
-
-
-  legend: {
-    position: 'top',
-    horizontalAlign: 'right',
-    offsetX: 40
-  }
-};
-const series =  [
+const labels =  [
   {
     name: 'Econômica',
-    data: [22, 43, 21]
   },
   {
     name: 'Executiva',
-    data: [13, 43, 32]
   },
   {
     name: 'Primeira Classe',
-    data: [ 15, 11, 20]
   }
 ];
 
 const UserClass = ({ analytics }) => {
-  console.log(analytics);
+  const series = labels.map(({ name }, index) => ({
+    name,
+    data: analytics.expensesByFlightType.map(({ expenses }) => expenses[index])
+  }))
+
+  const categories = analytics.expensesByFlightType.map(({ year }) => year);
+
+  const options = {
+    colors: ['#72c6a2', '#692885', '#ee2e24'],
+    chart: {
+      stacked: true,
+      toolbar: {
+        show: false
+      },
+      formatter: value => `R$ ${value}K`
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      style: {
+        colors: ['#fff'],
+        fontSize: 16
+      },
+      formatter: function(val, opt) {
+        return `R$ ${val}K`
+      },
+
+    },
+    stroke: {
+      width: 1,
+      colors: ['#fff'],
+      formatter: value => `R$ ${value}K`,
+      style: {
+        fontSize: 16,
+      }
+    },
+    xaxis: {
+      categories,
+      title: {
+        text: 'Ano',
+        style: {
+          fontSize: 16,
+        }
+      },
+      labels: {
+        formatter: value => `R$ ${value}K`,
+        style: {
+          fontSize: 16,
+        }
+      }
+    },
+    yaxis: {
+      title: {
+        text: undefined,
+        style: {
+          fontSize: 16,
+        }
+      },
+      labels: {
+        style: {
+          fontSize: 16,
+        }
+      }
+    },
+    tooltip: {
+      y: {
+        formatter: value => `R$ ${value}K`
+      }
+    },
+    legend: {
+      position: 'top',
+      horizontalAlign: 'right',
+      offsetX: 40,
+      fontSize: 16
+
+    },
+  };
   return (
     <Row>
       <Wrapper p={4} shadow="sm" borderWidth="1px" rounded="lg">
