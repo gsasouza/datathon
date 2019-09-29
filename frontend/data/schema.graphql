@@ -1,0 +1,101 @@
+"""Analytics data"""
+type Analytics {
+  """The ID of an object"""
+  id: ID!
+  _id: String
+  totalExpenses: Float
+  lastMonthExpenses: LastMonthExpenses
+  yearlyExpenses: [YearlyExpenses]
+  expensesByFlightType: [ExpensesByFlight]
+}
+
+input ChangePasswordInput {
+  oldPassword: String!
+
+  """user new password"""
+  password: String!
+  clientMutationId: String
+}
+
+type ChangePasswordPayload {
+  error: String
+  me: User
+  clientMutationId: String
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  isOwner: Boolean!
+  password: String!
+  clientMutationId: String
+}
+
+type CreateUserPayload {
+  token: String
+  error: String
+  clientMutationId: String
+}
+
+input DateFilter {
+  start: String
+  end: String
+}
+
+type ExpensesByFlight {
+  year: Int
+  expenses: [Float]
+}
+
+input Filter {
+  date: DateFilter
+}
+
+type LastMonthExpenses {
+  value: Float
+  relativeDiff: Float
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+  clientMutationId: String
+}
+
+type LoginUserPayload {
+  token: String
+  error: String
+  clientMutationId: String
+}
+
+type MonthlyExpenses {
+  value: Float
+  month: Int
+}
+
+type Mutation {
+  ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload
+  LoginUser(input: LoginUserInput!): LoginUserPayload
+  CreateUser(input: CreateUserInput!): CreateUserPayload
+}
+
+"""The root of all queries"""
+type Query {
+  analytics(filter: Filter): Analytics
+}
+
+"""User data"""
+type User {
+  """The ID of an object"""
+  id: ID!
+  _id: String
+  name: String
+  email: String
+  isOwner: Boolean
+  active: Boolean
+}
+
+type YearlyExpenses {
+  year: Int
+  expenses: [MonthlyExpenses]
+}
