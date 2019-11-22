@@ -46,6 +46,6 @@
     "koa-graphql": "^0.7.5",
     "koa-parser": "^1.0.5",
     "koa-router": "^7.4.0",
-    "mongoose": "^5.2.15"
+    "mongoose": "^5.7.5"
   }
 }
