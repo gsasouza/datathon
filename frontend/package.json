@@ -9,7 +9,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "apexcharts": "^3.8.6",
+    "apexcharts": "^3.24.0",
     "babel-plugin-macros": "^2.6.1",
     "babel-plugin-relay": "^6.0.0",
     "date-fns": "^2.4.1",
